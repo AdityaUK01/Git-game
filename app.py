@@ -6,15 +6,16 @@ Run: python app.py
 from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
 import pymysql
+from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
 CORS(app)
 
 DB_CONFIG = {
-    'host':     os.getenv('DB_HOST', 'localhost'),
-    'user':     os.getenv('DB_USER', 'root'),
-    'password': os.getenv('DB_PASS', 'Aditya12@@'),       # ← set your password
+    "host": os.getenv("DB_HOST"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),     # 
     'db':       'git_game',
     'charset':  'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor,

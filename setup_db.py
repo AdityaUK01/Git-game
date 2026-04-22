@@ -5,11 +5,13 @@ Edit DB_CONFIG below to match your MySQL credentials.
 """
 
 import pymysql
+from dotenv import load_dotenv
+import os
 
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'Aditya12@@',        # ← set your MySQL password here
+    "host": os.getenv("DB_HOST"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
     'charset': 'utf8mb4',
 }
 
