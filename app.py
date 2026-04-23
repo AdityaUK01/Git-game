@@ -3,9 +3,11 @@ Git Commander Game - Flask Backend
 Run: python app.py
 """
 
-from flask import Flask, render_template, jsonify, request
+
+from flask import Flask, render_template, jsonify, request, session
 from flask_cors import CORS
-import pymysql
+from werkzeug.security import generate_password_hash, check_password_hash
+import pymysql, os, re
 from dotenv import load_dotenv
 import os
 from flask import Flask, render_template, request, redirect, session
